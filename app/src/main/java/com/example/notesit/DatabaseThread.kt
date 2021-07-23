@@ -11,7 +11,7 @@ class DatabaseThread(val context: Context) : Runnable {
     override fun run() {
         val db = AppDatabase.getDatabase(context = context)
         val noteDao = db.noteDao()
-        val note = Note(1, "В магазин", "Купить хлеба и картошки", "вв", true)
+        val note = Note(6, "В магазин", "Купить хлеба и картошки", "вв", true)
         noteDao.insertNote(note)
         val notes = noteDao.getAll()
         Log.i("MyLOGg", notes.toString())

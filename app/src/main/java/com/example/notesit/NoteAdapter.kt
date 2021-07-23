@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.note_item.view.*
 
-class NoteAdapter(val context: Context, val noteList: ArrayList<Note>) :
+class NoteAdapter(val context: Context, val noteList: ArrayList<Note>, val callback:ViewHolder.ItemCallback) :
     RecyclerView.Adapter<ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(LayoutInflater.from(context).inflate(R.layout.note_item, parent, false))
@@ -20,6 +20,15 @@ class NoteAdapter(val context: Context, val noteList: ArrayList<Note>) :
         holder.tittle.text = noteList[pos].title
         holder.description.text = noteList[pos].description
         holder.date.text = noteList[pos].date
+        holder.deleteItem.setOnClickListener {
+            callback.deleteItem(pos)
+        }
+        holder.editItem.setOnClickListener {
+            callback.editItem(pos)
+        }
+        holder.impotentItem.setOnClickListener {
+            callback.impotentItem(pos)
+        }
     }
 
     override fun getItemCount() = noteList.size
@@ -44,4 +53,10 @@ class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         impotentItem = itemView.ivImpotentItem
 
     }
+    interface ItemCallback {
+        fun deleteItem(index: Int)
+        fun editItem(index: Int)
+        fun impotentItem(index: Int)
+    }
+
 }
