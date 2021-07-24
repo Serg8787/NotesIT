@@ -19,7 +19,6 @@ class MainActivity : AppCompatActivity(), ViewHolder.ItemCallback {
 
         noteDatabase = AppDatabase.getDatabase(this)
         getData()
-//        notesList = noteDatabase.noteDao().getAll()
         adapter = NoteAdapter(this,notesList,this)
         recycler.layoutManager = LinearLayoutManager(this)
         recycler.adapter = adapter
@@ -29,16 +28,13 @@ class MainActivity : AppCompatActivity(), ViewHolder.ItemCallback {
                val intent = Intent(this,AddNoteActivity::class.java)
             startActivity(intent)
         }
-
     }
 
     override fun deleteItem(index: Int) {
         val note = notesList.get(index)
-        if (note != null) {
-            noteDatabase.noteDao().deleteNote(note)
-            getData()
-            adapter.notifyDataSetChanged()
-        }
+        noteDatabase.noteDao().deleteNote(note)
+        getData()
+        adapter.notifyDataSetChanged()
         Toast.makeText(this,"Удаление"+index,Toast.LENGTH_LONG).show()
 
     }
