@@ -15,10 +15,10 @@ class AddNoteActivity : AppCompatActivity() {
         noteDatabase = AppDatabase.getDatabase(this)
 
 
-        btSave.setOnClickListener {
-            val title:String = etTittle.text.toString()
-            val description:String = etDescription.text.toString()
-            val sdf = SimpleDateFormat("dd/M/yyyy hh:mm")
+        btAddNote.setOnClickListener {
+            val title:String = etTitleAdd.text.toString()
+            val description:String = etdescriptionAdd.text.toString()
+            val sdf = SimpleDateFormat("dd/M/yyyy kk:mm",Locale.getDefault())
             val currentDate = sdf.format(Date())
             val date:String = currentDate
             val note:Note = Note(title = title,description = description,date = date,isImpotent = false)
