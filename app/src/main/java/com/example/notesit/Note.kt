@@ -5,10 +5,12 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-class Note(
+data class Note(
     @PrimaryKey
-    val id:Int,
-    val title:String?,
-    val description:String?,
-    val date:String?,
-    val isImpotent:Boolean )
+    var id:Int,
+    var title:String,
+    var description:String?,
+    var date: String,
+    var isImpotent:Boolean ) {
+
+}

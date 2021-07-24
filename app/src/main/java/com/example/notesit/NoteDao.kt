@@ -16,4 +16,8 @@ interface NoteDao {
 
     @Update
     fun updateNote(note: Note)
+
+
+    @Query("SELECT * FROM note WHERE id = :id")
+    fun getNoteById(id: Int): Note?
 }

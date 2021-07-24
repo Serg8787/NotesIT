@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.note_item.view.*
 
-class NoteAdapter(val context: Context, val noteList: ArrayList<Note>, val callback:ViewHolder.ItemCallback) :
+class NoteAdapter(val context: Context, val noteList: List<Note>, val callback:ViewHolder.ItemCallback) :
     RecyclerView.Adapter<ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(LayoutInflater.from(context).inflate(R.layout.note_item, parent, false))
