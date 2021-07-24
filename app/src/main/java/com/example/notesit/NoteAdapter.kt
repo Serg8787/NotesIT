@@ -1,11 +1,15 @@
 package com.example.notesit
 
+import android.annotation.SuppressLint
+import android.app.AlertDialog
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.note_item.view.*
 
@@ -15,6 +19,7 @@ class NoteAdapter(val context: Context, val noteList: List<Note>, val callback:V
         return ViewHolder(LayoutInflater.from(context).inflate(R.layout.note_item, parent, false))
     }
 
+    @SuppressLint("ResourceAsColor")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val pos = holder.getAdapterPosition()
         holder.tittle.text = noteList[pos].title
@@ -28,6 +33,7 @@ class NoteAdapter(val context: Context, val noteList: List<Note>, val callback:V
         }
         holder.impotentItem.setOnClickListener {
             callback.impotentItem(pos)
+
         }
     }
 
@@ -42,6 +48,7 @@ class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     var editItem: ImageView
     var deleteItem: ImageView
     var impotentItem: ImageView
+    var constRoot:View
 
 
     init {
@@ -51,6 +58,7 @@ class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         editItem = itemView.ivEditItem
         deleteItem = itemView.iDeleteItem
         impotentItem = itemView.ivImpotentItem
+        constRoot = itemView.constRoot
 
     }
     interface ItemCallback {

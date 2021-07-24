@@ -16,12 +16,12 @@ class AddNoteActivity : AppCompatActivity() {
 
 
         btSave.setOnClickListener {
-            val name:String = etTittle.text.toString()
+            val title:String = etTittle.text.toString()
             val description:String = etDescription.text.toString()
             val sdf = SimpleDateFormat("dd/M/yyyy hh:mm")
             val currentDate = sdf.format(Date())
             val date:String = currentDate
-            val note = Note(1,title = name,description = description,date = date,isImpotent = false)
+            val note:Note = Note(title = title,description = description,date = date,isImpotent = false)
             noteDatabase.noteDao().insertNote(note)
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
