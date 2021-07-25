@@ -64,7 +64,6 @@ class MainActivity : AppCompatActivity(), ViewHolder.ItemCallback {
             }
             .setNegativeButton("Cancel") { dialog, _ ->
                 dialog.dismiss()
-
             }
             .create()
             .show()
