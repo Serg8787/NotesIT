@@ -16,7 +16,7 @@
 
         <EditText
             android:id="@+id/etTitleUpdate"
-            android:hint="New title"
+            android:hint="Theme"
             android:inputType="textCapWords"
             android:textColor="@color/purple_500"
             android:textSize="18sp"
@@ -42,10 +42,6 @@
             android:layout_marginBottom="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
-
-
-
-
     </LinearLayout>
 
 </LinearLayout>
