@@ -45,8 +45,6 @@ class MainActivity : AppCompatActivity(), ViewHolder.ItemCallback {
     override fun editItem(index: Int) {
         val inflter = LayoutInflater.from(this)
         val v = inflter.inflate(R.layout.update_note, null)
-
-        /**set view*/
         val title = v.findViewById<EditText>(R.id.etTitleUpdate)
         val description = v.findViewById<EditText>(R.id.etDescriptionUpdate)
 
