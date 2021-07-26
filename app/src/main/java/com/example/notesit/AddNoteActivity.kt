@@ -10,21 +10,34 @@ import java.util.*
 
 class AddNoteActivity : AppCompatActivity() {
     lateinit var noteDatabase:AppDatabase
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_note)
+
+
         noteDatabase = AppDatabase.getDatabase(this)
 
 
         btAddNote.setOnClickListener {
+            var isImpotent:Int
             if(etTitleAdd.text.toString().isNotEmpty() && etdescriptionAdd.text.toString().isNotEmpty() ) {
                 val title: String = etTitleAdd.text.toString()
                 val description: String = etdescriptionAdd.text.toString()
                 val sdf = SimpleDateFormat("dd/M/yyyy kk:mm", Locale.getDefault())
                 val currentDate = sdf.format(Date())
                 val date: String = currentDate
+                if(btAddToFavoriute.isChecked){
+                    isImpotent=1
+//                    Toast.makeText(this,"Нажата" + isImpotent.toString(),Toast.LENGTH_LONG).show()
+                } else {
+                    isImpotent=2
+//                    Toast.makeText(this," Не НЕ Нажата" + isImpotent,Toast.LENGTH_LONG).show()
+                }
+
                 val note: Note =
-                    Note(title = title, description = description, date = date, isImpotent = false)
+                    Note(title = title, description = description, date = date, isImpotent = isImpotent)
+                Toast.makeText(this,""+note.isImpotent,Toast.LENGTH_LONG).show()
                 noteDatabase.noteDao().insertNote(note)
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)

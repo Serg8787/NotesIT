@@ -14,7 +14,7 @@ data class Note(
     var title: String,
     var description: String?,
     var date: String,
-    var isImpotent: Boolean,
+    var isImpotent: Int,
 
 ){
     @PrimaryKey(autoGenerate = true)
