@@ -16,7 +16,7 @@
 
         <EditText
             android:id="@+id/etTitleUpdate"
-            android:hint="Theme"
+            android:hint="@string/themeUpdateHint"
             android:inputType="textCapWords"
             android:textColor="@color/purple_500"
             android:textSize="18sp"
@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"/>
         <EditText
             android:id="@+id/etDescriptionUpdate"
-            android:hint="Description "
+            android:hint="@string/descriptionUpdateHint"
             android:inputType="textCapWords"
             android:textColor="@color/purple_500"
             android:padding="15dp"

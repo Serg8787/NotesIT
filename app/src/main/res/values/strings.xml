@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">NotesIT</string>
+    <string name="textviewItem">TextView</string>
+    <string name="titleItem">Title</string>
+    <string name="dateItem">Date</string>
+    <string name="themeUpdateHint">Theme</string>
+    <string name="descriptionUpdateHint">Description</string>
+    <string name="add_to_impotent">Add to impotent</string>
+    <string name="add_new_note">Add New Note</string>
+    <string name="description">Description</string>
+    <string name="new_theme">New Theme</string>
 </resources>
