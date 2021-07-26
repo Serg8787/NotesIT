@@ -72,12 +72,6 @@ class MainActivity : AppCompatActivity(), ViewHolder.ItemCallback {
 
     }
 
-    @SuppressLint("ResourceAsColor")
-    override fun impotentItem(index: Int) {
-
-
-    }
-
     fun getData() {
         val noteFromDb: List<Note> = noteDatabase.noteDao().getAll()
         notesList.clear()

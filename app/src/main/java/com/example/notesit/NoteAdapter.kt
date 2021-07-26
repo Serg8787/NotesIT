@@ -55,7 +55,6 @@ class NoteAdapter(
         var date: TextView
         var editItem: ImageView
         var deleteItem: ImageView
-//        var impotentItem: ImageView
         var constRoot: View
 
 
@@ -65,14 +64,13 @@ class NoteAdapter(
             date = itemView.tvDateItem
             editItem = itemView.ivEditItem
             deleteItem = itemView.ivDeleteItem
-//            impotentItem = itemView.ivImpotentItem
             constRoot = itemView.constRoot
         }
 
         interface ItemCallback {
             fun deleteItem(index: Int)
             fun editItem(index: Int)
-            fun impotentItem(index: Int)
+
         }
 
     }
