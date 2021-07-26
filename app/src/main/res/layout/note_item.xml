@@ -40,11 +40,11 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:padding="10dp"
+            android:gravity="start"
             android:text="TextView"
             android:textSize="23sp"
             app:layout_constraintBottom_toTopOf="@+id/tvDateItem"
             app:layout_constraintEnd_toStartOf="@+id/ivDeleteItem"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/tvTitleItem"
             app:layout_constraintTop_toBottomOf="@+id/tvTitleItem" />
 
