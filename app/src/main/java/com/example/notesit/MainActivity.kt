@@ -19,8 +19,9 @@ class MainActivity : AppCompatActivity(), ViewHolder.ItemCallback {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        notesList = ArrayList<Note>()
+        supportActionBar?.hide()
 
+        notesList = ArrayList<Note>()
         noteDatabase = AppDatabase.getDatabase(this)
         getData()
         adapter = NoteAdapter(this, notesList, this)
@@ -48,7 +49,7 @@ class MainActivity : AppCompatActivity(), ViewHolder.ItemCallback {
         val title = v.findViewById<EditText>(R.id.etTitleUpdate)
         val description = v.findViewById<EditText>(R.id.etDescriptionUpdate)
 
-        val addDialog = androidx.appcompat.app.AlertDialog.Builder(this)
+        val addDialog = AlertDialog.Builder(this)
         addDialog
             .setView(v)
             .setPositiveButton("Ok") { dialog, _ ->
@@ -81,7 +82,5 @@ class MainActivity : AppCompatActivity(), ViewHolder.ItemCallback {
         val noteFromDb: List<Note> = noteDatabase.noteDao().getAll()
         notesList.clear()
         notesList.addAll(noteFromDb)
-
-
     }
 }

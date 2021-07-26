@@ -21,11 +21,11 @@
 
     <ImageView
         android:id="@+id/floatingActionButton"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="40dp"
+        android:layout_margin="65dp"
         app:srcCompat="@drawable/add_property" />
 </androidx.constraintlayout.widget.ConstraintLayout>

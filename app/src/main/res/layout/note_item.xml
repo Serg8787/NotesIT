@@ -3,10 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="10dp"
     android:layout_marginStart="15dp"
     android:layout_marginEnd="15dp"
     android:layout_marginTop="10dp"
+    app:cardCornerRadius="15dp"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
@@ -15,7 +15,6 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constRoot"
-        android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
@@ -24,23 +23,27 @@
             android:id="@+id/tvTitleItem"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:padding="4dp"
+            android:paddingStart="10dp"
             android:text="Title"
+            android:gravity="center"
             android:textSize="25sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/iDeleteItem"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvDescriptionItem"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:padding="10dp"
             android:text="TextView"
             android:textSize="23sp"
             app:layout_constraintBottom_toTopOf="@+id/tvDateItem"
-            app:layout_constraintEnd_toEndOf="@+id/tvTitleItem"
+            app:layout_constraintEnd_toStartOf="@+id/ivDeleteItem"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/tvTitleItem"
             app:layout_constraintTop_toBottomOf="@+id/tvTitleItem" />
@@ -51,6 +54,9 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
             android:text="Date"
+            android:paddingStart="10dp"
+
+            android:padding="4dp"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/tvDescriptionItem"
@@ -58,12 +64,13 @@
             app:layout_constraintStart_toStartOf="@+id/tvDescriptionItem" />
 
         <ImageView
-            android:id="@+id/iDeleteItem"
+            android:id="@+id/ivDeleteItem"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginEnd="15dp"
+            android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tvTitleItem"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitleItem"
             app:srcCompat="@drawable/icons8_delete_64" />
 
         <ImageView
@@ -71,21 +78,11 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_marginTop="10dp"
-            app:layout_constraintEnd_toEndOf="@+id/iDeleteItem"
-            app:layout_constraintTop_toBottomOf="@+id/iDeleteItem"
-            app:srcCompat="@drawable/icons8_edit_64" />
-
-        <ImageView
-            android:id="@+id/ivImpotentItem"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/ivDeleteItem"
+            app:layout_constraintTop_toBottomOf="@+id/ivDeleteItem"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/ivEditItem"
-            app:layout_constraintStart_toStartOf="@+id/ivEditItem"
-            app:layout_constraintTop_toBottomOf="@+id/ivEditItem"
-            app:srcCompat="@drawable/icons8_impotent_64" />
+            app:srcCompat="@drawable/icons8_edit_64" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

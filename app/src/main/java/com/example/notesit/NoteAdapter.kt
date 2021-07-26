@@ -36,19 +36,14 @@ class NoteAdapter(
         holder.editItem.setOnClickListener {
             callback.editItem(pos)
         }
-        holder.impotentItem.setOnClickListener {
-            callback.impotentItem(pos)
-
-        }
         val colorId:Int
         if (noteList[pos].isImpotent.equals(1)) {
-           colorId = holder.itemView.resources.getColor(R.color.teal_700)
+           colorId = holder.itemView.resources.getColor(R.color.red)
         } else {
-           colorId = holder.itemView.resources.getColor(R.color.white)
+           colorId = holder.itemView.resources.getColor(R.color.grey)
         }
-        holder.constRoot.setBackgroundColor(colorId)
+        holder.tittle.setBackgroundColor(colorId)
         }
-
         override fun getItemCount() = noteList.size
     }
 
@@ -60,7 +55,7 @@ class NoteAdapter(
         var date: TextView
         var editItem: ImageView
         var deleteItem: ImageView
-        var impotentItem: ImageView
+//        var impotentItem: ImageView
         var constRoot: View
 
 
@@ -69,8 +64,8 @@ class NoteAdapter(
             description = itemView.tvDescriptionItem
             date = itemView.tvDateItem
             editItem = itemView.ivEditItem
-            deleteItem = itemView.iDeleteItem
-            impotentItem = itemView.ivImpotentItem
+            deleteItem = itemView.ivDeleteItem
+//            impotentItem = itemView.ivImpotentItem
             constRoot = itemView.constRoot
         }
 
