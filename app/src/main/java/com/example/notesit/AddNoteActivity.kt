@@ -30,10 +30,9 @@ class AddNoteActivity : AppCompatActivity() {
                 val date: String = currentDate
                 if(btAddToFavoriute.isChecked){
                     isImpotent=1
-//                    Toast.makeText(this,"Нажата" + isImpotent.toString(),Toast.LENGTH_LONG).show()
                 } else {
                     isImpotent=2
-//                    Toast.makeText(this," Не НЕ Нажата" + isImpotent,Toast.LENGTH_LONG).show()
+
                 }
 
                 val note: Note =
